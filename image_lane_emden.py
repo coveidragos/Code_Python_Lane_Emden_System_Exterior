@@ -15,7 +15,7 @@ img_norm = img_array / 255.0
 height, width, channels = img_norm.shape
 
 # Gaussian noise parameters
-noise_sigma = 0.10   # standard deviation of noise
+noise_sigma = 0.09   # standard deviation of noise
 np.random.seed(0)
 
 noise = noise_sigma * np.random.randn(height, width, channels)
@@ -32,20 +32,20 @@ v = noisy_img.copy()
 # 3. Parameters
 # ============================================================
 
-alpha = 0.3
-beta  = 0.2
-max_iter = 80
+alpha = 0.45
+beta  = 0.35
+max_iter = 150
 tol = 1e-4
 
-omega = 0.65  # relaxation
-lambda_data = 0.04
+omega = 0.78  # relaxation
+lambda_data = 0.12
 lambda_smooth = 1.0 - lambda_data
 
-nl_max_u = 0.45
-nl_max_v = 0.45
+nl_max_u = 0.85
+nl_max_v = 0.85
 
 # Edge-preserving diffusion parameter
-kappa = 0.08
+kappa = 0.14
 
 # Early stopping based on SSIM
 check_every = 2
